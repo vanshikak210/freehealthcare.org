@@ -1,11 +1,13 @@
 # Free Healthcare Initiative of California: website
 
-Jekyll + Minima site (same structure as the Open Coding Society template). Hosted on **Cloudflare Pages**, which builds it on every push to `main`.
+Jekyll + Minima site (same structure as the Open Coding Society template). Built by GitHub Actions, hosted on **Cloudflare Pages**.
 
-## Cloudflare Pages build settings
-- Build command: `bundle install && bundle exec jekyll build`
-- Build output directory: `_site`
-- Environment variable (optional): `JEKYLL_ENV=production`
+## How it deploys
+1. Push to `main`. The GitHub Action (`.github/workflows/build.yml`) builds the site with Jekyll.
+2. The finished site is published to the `deploy` branch.
+3. Cloudflare Pages serves the `deploy` branch with **no build command** (production branch: `deploy`, output directory: blank).
+
+If a build fails, check the **Actions** tab on GitHub.
 
 ## Edit the site
 | To change | Edit |
