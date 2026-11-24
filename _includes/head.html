@@ -5,6 +5,18 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
   <meta name="theme-color" content="#1E4F72">
+  <script>
+    // Apply saved preferences before the page paints (no flash). Default is light.
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('fhic-theme'), z = localStorage.getItem('fhic-size');
+        if (t === 'light' || t === 'dark' || t === 'system') { d.dataset.theme = t; }
+        if (z === 'large') { d.dataset.size = z; }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
