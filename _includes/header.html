@@ -1,0 +1,17 @@
+<header class="site-header" role="banner">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="" width="56" height="56">
+      <span>Free Healthcare Initiative<small>of California</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger">
+      <label for="nav-trigger"><span class="bars" aria-hidden="true"></span> Menu</label>
+      <div class="trigger">
+        {%- for item in site.data.nav %}
+        <a class="page-link{% if item.button %} btn{% endif %}" href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {%- endfor %}
+      </div>
+    </nav>
+  </div>
+</header>

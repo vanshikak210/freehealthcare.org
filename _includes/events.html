@@ -1,0 +1,18 @@
+<section class="events">
+{%- for e in site.data.events %}
+  <article class="card" data-end="{{ e.end }}">
+    <time datetime="{{ e.date | date: '%Y-%m-%d' }}" aria-hidden="true"><small>{{ e.date | date: "%b" }}</small><b>{{ e.date | date: "%-d" }}</b></time>
+    <div>
+      <h3>{{ e.title | escape }}</h3>
+      <p><strong>{{ e.date | date: "%A, %B %-d, %Y" }} · {{ e.time }}</strong><br>{{ e.place }}</p>
+      <p>{{ e.text | escape }}</p>
+      {%- if e.note %}
+      <p><small>{{ e.note }}</small></p>
+      {%- endif %}
+      {%- if e.button %}
+      <a class="btn{% if e.button.ghost %} ghost{% endif %}" href="{{ e.button.url | escape }}" target="_blank" rel="noopener">{{ e.button.label }}</a>
+      {%- endif %}
+    </div>
+  </article>
+{%- endfor %}
+</section>

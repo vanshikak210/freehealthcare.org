@@ -1,0 +1,17 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  {%- seo -%}
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  <meta name="theme-color" content="#1E4F72">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {%- if page.url == '/' %}
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"NGO","name":"{{ site.title }}","alternateName":"FHIC","url":"{{ site.url }}/","email":"{{ site.email }}","description":"A California nonprofit helping lower-income families understand and claim the healthcare they qualify for.","taxID":"39-4123660","areaServed":{"@type":"State","name":"California"},"logo":"{{ site.url }}/favicon-192.png","sameAs":["{{ site.instagram_url }}"]}
+  </script>
+  {%- endif %}
+</head>

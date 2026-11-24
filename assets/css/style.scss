@@ -1,0 +1,12 @@
+---
+---
+// Minima settings (must come before the import)
+$base-font-family: "Public Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size: 19px;
+$base-line-height: 1.65;
+$content-width: 1120px;
+$on-palm: 900px;
+$on-laptop: 900px;
+
+@import "minima";
+@import "theme";

@@ -1,0 +1,23 @@
+title: Free Healthcare Initiative of California
+description: A youth-led California nonprofit helping lower-income families understand and claim the healthcare they qualify for. Free guides, workshops, and one-on-one help.
+url: https://freehealthcareca.org
+lang: en
+theme: minima
+markdown: kramdown
+image: /og-image.jpg
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Shared links, used in pages as {{ site.petition_url }} etc.
+email: freehealthcareca@gmail.com
+instagram_url: https://www.instagram.com/free_healthcareinitiativeca/
+petition_url: https://www.change.org/p/end-hidden-hospital-charges-support-billing-transparency
+gofundme_url: https://www.gofundme.com/f/help-us-make-healthcare-affordable-in-california
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

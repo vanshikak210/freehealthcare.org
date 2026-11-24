@@ -1,0 +1,24 @@
+# One entry per event. Each event hides itself automatically once `end` has passed.
+# date: YYYY-MM-DD   time: text shown to visitors   end: ISO time with the Pacific offset
+#   (-08:00 in winter, -07:00 during daylight saving time)
+- title: Diabetes Awareness
+  date: 2026-11-28
+  time: 2:00 – 3:00 PM
+  end: "2026-11-28T15:00:00-08:00"
+  place: Online event on Zoom
+  text: Join FHI for an interactive meeting of learning, myth-busting, and exploring access to diabetes care.
+  button:
+    label: Join on Zoom
+    url: https://us04web.zoom.us/j/77489033156?pwd=VWsbgy6TJlTAHJ6PbPJXp7PVFAMGqA.1
+
+- title: Immunization & Vaccine 101
+  date: 2026-12-07
+  time: 4:30 – 5:30 PM
+  end: "2026-12-07T17:30:00-08:00"
+  place: 4S Ranch Library, 10433 Reserve Dr, San Diego, CA 92127
+  text: A free workshop for all ages, with FHI California and ProjectPatho in partnership with the County of San Diego. Hands-on activities for kids, teens and adults, how vaccines train your immune system, myths vs. facts explained simply, and an ask-the-experts Q&A.
+  note: Free and open to everyone. No registration needed.
+  button:
+    label: Get directions
+    ghost: true
+    url: https://www.google.com/maps/search/?api=1&query=4S+Ranch+Library+10433+Reserve+Dr+San+Diego+CA+92127
