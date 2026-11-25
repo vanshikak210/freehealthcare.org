@@ -28,4 +28,3 @@ bundle exec jekyll serve
 - English lives at the site root; Spanish lives in `es/`. Each page has a `ref:` in its front matter so the two versions link to each other.
 - Menus and footer text: `_data/ui.yml` and `_data/nav.yml`. Events and team: the `es:` block inside `_data/events.yml` / `_data/team.yml`.
 - To add another real translation, add a language to `_data/languages.yml` (`real`), a column in `ui.yml` / `nav.yml`, and a folder of translated pages.
-- Other languages in the Preferences list open Google Translate on the current page (machine translation).

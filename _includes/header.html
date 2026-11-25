@@ -38,11 +38,6 @@
         {%- if page.ref %}{%- assign alt = site.pages | where: "ref", page.ref | where: "lang", lg.code | first %}{%- if alt %}{%- assign opt_url = alt.url %}{%- endif %}{%- endif %}
         <option value="{{ opt_url | relative_url }}"{% if lg.code == L %} selected{% endif %}>{{ lg.name }}</option>
         {%- endfor %}
-        <optgroup label="{{ ui.machine_translated }}">
-          {%- for m in site.data.languages.machine %}
-          <option value="mt:{{ m.code }}">{{ m.name }}</option>
-          {%- endfor %}
-        </optgroup>
       </select>
     </fieldset>
     <fieldset>
