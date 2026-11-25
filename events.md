@@ -6,6 +6,7 @@ heading: Free events, open to everyone
 lede: Workshops and awareness sessions on coverage, billing, and staying healthy. No cost, no pitch.
 description: Free healthcare workshops and awareness events from the Free Healthcare Initiative of California. Open to everyone.
 permalink: /events/
+ref: events
 ---
 
 ## Upcoming {#upcoming}

@@ -6,6 +6,7 @@ heading: End hidden hospital charges
 lede: We're asking the San Diego County Board of Supervisors to support the Healthcare Billing Transparency Act — so every patient gets a bill they can actually read.
 description: Sign our petition asking San Diego County to support the Healthcare Billing Transparency Act, so every patient gets an itemized, plain-language bill.
 permalink: /petition/
+ref: petition
 ---
 
 [Sign the petition]({{ site.petition_url }}){: .btn target="_blank" rel="noopener"}

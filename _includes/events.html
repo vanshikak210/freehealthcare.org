@@ -1,16 +1,25 @@
+{%- assign L = page.lang | default: site.lang -%}
+{%- assign ui = site.data.ui[L] -%}
 <section class="events">
 {%- for e in site.data.events %}
+  {%- assign loc = e[L] %}
+  {%- assign wd = e.date | date: "%w" | plus: 0 %}
+  {%- assign mo = e.date | date: "%-m" | plus: 0 | minus: 1 %}
+  {%- assign dnum = e.date | date: "%-d" %}
+  {%- assign yr = e.date | date: "%Y" %}
+  {%- assign dateline = ui.date_format | replace: "[day]", ui.days[wd] | replace: "[month]", ui.months[mo] | replace: "[d]", dnum | replace: "[year]", yr %}
   <article class="card" data-end="{{ e.end }}">
-    <time datetime="{{ e.date | date: '%Y-%m-%d' }}" aria-hidden="true"><small>{{ e.date | date: "%b" }}</small><b>{{ e.date | date: "%-d" }}</b></time>
+    <time datetime="{{ e.date | date: '%Y-%m-%d' }}" aria-hidden="true"><small>{{ ui.months_short[mo] }}</small><b>{{ dnum }}</b></time>
     <div>
-      <h3>{{ e.title | escape }}</h3>
-      <p><strong>{{ e.date | date: "%A, %B %-d, %Y" }} · {{ e.time }}</strong><br>{{ e.place }}</p>
-      <p>{{ e.text | escape }}</p>
-      {%- if e.note %}
-      <p><small>{{ e.note }}</small></p>
+      <h3>{{ loc.title | default: e.title | escape }}</h3>
+      <p><strong>{{ dateline }} · {{ loc.time | default: e.time }}</strong><br>{{ loc.place | default: e.place }}</p>
+      <p>{{ loc.text | default: e.text | escape }}</p>
+      {%- assign note = loc.note | default: e.note %}
+      {%- if note %}
+      <p><small>{{ note }}</small></p>
       {%- endif %}
       {%- if e.button %}
-      <a class="btn{% if e.button.ghost %} ghost{% endif %}" href="{{ e.button.url | escape }}" target="_blank" rel="noopener">{{ e.button.label }}</a>
+      <a class="btn{% if e.button.ghost %} ghost{% endif %}" href="{{ e.button.url | escape }}" target="_blank" rel="noopener">{{ loc.button | default: e.button.label }}</a>
       {%- endif %}
     </div>
   </article>

@@ -6,6 +6,7 @@ heading: Donate
 lede: Every dollar goes toward printing plain-language guides, running free workshops, and keeping our inbox answered.
 description: Donate to the Free Healthcare Initiative of California to fund free guides, workshops and outreach.
 permalink: /donate/
+ref: donate
 ---
 
 <aside markdown="1">

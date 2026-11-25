@@ -39,6 +39,19 @@
       else { delete d.dataset.size; save('fhic-size', null); }
     }
   });
+  var lang = document.getElementById('prefs-lang');
+  if (lang) {
+    lang.addEventListener('change', function () {
+      var v = lang.value;
+      if (v.indexOf('mt:') === 0) {
+        // Machine translation of the current page through Google Translate
+        window.location.href = 'https://translate.google.com/translate?sl=auto&tl=' + encodeURIComponent(v.slice(3)) +
+          '&u=' + encodeURIComponent(window.location.href.split('#')[0]);
+      } else {
+        window.location.href = v;
+      }
+    });
+  }
   document.getElementById('prefs-reset').addEventListener('click', function () {
     delete d.dataset.theme; delete d.dataset.size;
     save('fhic-theme', null); save('fhic-size', null);

@@ -1,0 +1,23 @@
+# Real, hand-translated versions of the site (each needs a folder like /es/ and entries in _data/ui.yml).
+real:
+  - { code: en, name: English, home: / }
+  - { code: es, name: Español, home: /es/ }
+
+# Offered in the Preferences panel as machine translation (Google Translate) of the current page.
+machine:
+  - { code: zh-CN, name: 中文（简体） }
+  - { code: zh-TW, name: 中文（繁體） }
+  - { code: vi, name: Tiếng Việt }
+  - { code: tl, name: Tagalog }
+  - { code: ko, name: 한국어 }
+  - { code: ar, name: العربية }
+  - { code: ru, name: Русский }
+  - { code: hy, name: Հայերեն }
+  - { code: fa, name: فارسی }
+  - { code: pa, name: ਪੰਜਾਬੀ }
+  - { code: hi, name: हिन्दी }
+  - { code: ja, name: 日本語 }
+  - { code: hmn, name: Hmoob }
+  - { code: km, name: ខ្មែរ }
+  - { code: pt, name: Português }
+  - { code: fr, name: Français }

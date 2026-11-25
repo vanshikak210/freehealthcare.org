@@ -6,6 +6,7 @@ heading: Get in touch
 lede: Questions about coverage, a workshop, or working together — write to us and a person will answer.
 description: Contact the Free Healthcare Initiative of California with questions about coverage, workshops, or starting a chapter.
 permalink: /contact/
+ref: contact
 ---
 
 <form action="https://formspree.io/f/mvkgkkjo" method="POST">

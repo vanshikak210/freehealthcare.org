@@ -1,35 +1,61 @@
+{%- assign L = page.lang | default: site.lang -%}
+{%- assign ui = site.data.ui[L] -%}
+{%- if L == 'en' -%}{%- assign prefix = '' -%}{%- else -%}{%- assign prefix = '/' | append: L -%}{%- endif -%}
 <header class="site-header" role="banner">
   <div class="wrapper">
-    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+    <a class="site-title" rel="author" href="{{ prefix | append: '/' | relative_url }}">
       <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="" width="56" height="56">
       <span>Free Healthcare Initiative<small>of California</small></span>
     </a>
     <nav class="site-nav" aria-label="Main">
       <input type="checkbox" id="nav-trigger" class="nav-trigger">
-      <label for="nav-trigger"><span class="bars" aria-hidden="true"></span> Menu</label>
+      <label for="nav-trigger"><span class="bars" aria-hidden="true"></span> {{ ui.menu }}</label>
       <div class="trigger">
         {%- for item in site.data.nav %}
-        <a class="page-link{% if item.button %} btn{% endif %}" href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {%- assign target = prefix | append: item.path %}
+        <a class="page-link{% if item.button %} btn{% endif %}" href="{{ target | relative_url }}"{% if page.url == target %} aria-current="page"{% endif %}>{{ item[L] }}</a>
+        {%- endfor %}
+        {%- for lg in site.data.languages.real %}
+        {%- if lg.code != L %}
+        {%- assign alt_url = lg.home %}
+        {%- if page.ref %}{%- assign alt = site.pages | where: "ref", page.ref | where: "lang", lg.code | first %}{%- if alt %}{%- assign alt_url = alt.url %}{%- endif %}{%- endif %}
+        <a class="page-link lang-link" href="{{ alt_url | relative_url }}" hreflang="{{ lg.code }}" lang="{{ lg.code }}">{{ lg.name }}</a>
+        {%- endif %}
         {%- endfor %}
       </div>
     </nav>
-    <button type="button" class="prefs-toggle" id="prefs-toggle" aria-expanded="false" aria-controls="prefs-panel" aria-label="Preferences" title="Preferences">
+    <button type="button" class="prefs-toggle" id="prefs-toggle" aria-expanded="false" aria-controls="prefs-panel" aria-label="{{ ui.preferences }}" title="{{ ui.preferences }}">
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
     </button>
   </div>
   <div class="prefs-panel" id="prefs-panel" role="dialog" aria-labelledby="prefs-title" hidden>
-    <h2 id="prefs-title">Preferences</h2>
+    <h2 id="prefs-title">{{ ui.preferences }}</h2>
     <fieldset>
-      <legend>Appearance</legend>
-      <label><input type="radio" name="theme" value="light"> Light</label>
-      <label><input type="radio" name="theme" value="dark"> Dark</label>
-      <label><input type="radio" name="theme" value="system"> Match my device</label>
+      <legend>{{ ui.language }}</legend>
+      <select id="prefs-lang" aria-label="{{ ui.language }}">
+        {%- for lg in site.data.languages.real %}
+        {%- assign opt_url = lg.home %}
+        {%- if page.ref %}{%- assign alt = site.pages | where: "ref", page.ref | where: "lang", lg.code | first %}{%- if alt %}{%- assign opt_url = alt.url %}{%- endif %}{%- endif %}
+        <option value="{{ opt_url | relative_url }}"{% if lg.code == L %} selected{% endif %}>{{ lg.name }}</option>
+        {%- endfor %}
+        <optgroup label="{{ ui.machine_translated }}">
+          {%- for m in site.data.languages.machine %}
+          <option value="mt:{{ m.code }}">{{ m.name }}</option>
+          {%- endfor %}
+        </optgroup>
+      </select>
     </fieldset>
     <fieldset>
-      <legend>Text size</legend>
-      <label><input type="radio" name="size" value="standard"> Standard</label>
-      <label><input type="radio" name="size" value="large"> Large</label>
+      <legend>{{ ui.appearance }}</legend>
+      <label><input type="radio" name="theme" value="light"> {{ ui.light }}</label>
+      <label><input type="radio" name="theme" value="dark"> {{ ui.dark }}</label>
+      <label><input type="radio" name="theme" value="system"> {{ ui.system }}</label>
     </fieldset>
-    <p><button type="button" class="btn ghost" id="prefs-reset">Reset to defaults</button></p>
+    <fieldset>
+      <legend>{{ ui.text_size }}</legend>
+      <label><input type="radio" name="size" value="standard"> {{ ui.standard }}</label>
+      <label><input type="radio" name="size" value="large"> {{ ui.large }}</label>
+    </fieldset>
+    <p><button type="button" class="btn ghost" id="prefs-reset">{{ ui.reset }}</button></p>
   </div>
 </header>

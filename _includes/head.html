@@ -2,6 +2,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   {%- seo -%}
+  {%- if page.ref %}
+  {%- assign alts = site.pages | where: "ref", page.ref %}
+  {%- for a in alts %}
+  <link rel="alternate" hreflang="{{ a.lang }}" href="{{ a.url | absolute_url }}">
+  {%- endfor %}
+  {%- assign en_page = alts | where: "lang", "en" | first %}
+  {%- if en_page %}<link rel="alternate" hreflang="x-default" href="{{ en_page.url | absolute_url }}">{% endif %}
+  {%- endif %}
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
   <meta name="theme-color" content="#1E4F72">

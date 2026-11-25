@@ -1,13 +1,11 @@
 # Free Healthcare Initiative of California: website
 
-Jekyll + Minima site (same structure as the Open Coding Society template). Built by GitHub Actions, hosted on **Cloudflare Pages**.
+Jekyll + Minima site (same structure as the Open Coding Society template). Hosted on **Cloudflare Pages**, which builds it on every push to `main`.
 
-## How it deploys
-1. Push to `main`. The GitHub Action (`.github/workflows/build.yml`) builds the site with Jekyll.
-2. The finished site is published to the `deploy` branch.
-3. Cloudflare Pages serves the `deploy` branch with **no build command** (production branch: `deploy`, output directory: blank).
-
-If a build fails, check the **Actions** tab on GitHub.
+## Cloudflare Pages build settings
+- Build command: `bundle install && bundle exec jekyll build`
+- Build output directory: `_site`
+- Environment variable (optional): `JEKYLL_ENV=production`
 
 ## Edit the site
 | To change | Edit |
@@ -24,3 +22,10 @@ If a build fails, check the **Actions** tab on GitHub.
 bundle install
 bundle exec jekyll serve
 ```
+
+## Languages
+
+- English lives at the site root; Spanish lives in `es/`. Each page has a `ref:` in its front matter so the two versions link to each other.
+- Menus and footer text: `_data/ui.yml` and `_data/nav.yml`. Events and team: the `es:` block inside `_data/events.yml` / `_data/team.yml`.
+- To add another real translation, add a language to `_data/languages.yml` (`real`), a column in `ui.yml` / `nav.yml`, and a folder of translated pages.
+- Other languages in the Preferences list open Google Translate on the current page (machine translation).

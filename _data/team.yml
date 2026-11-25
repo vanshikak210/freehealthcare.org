@@ -1,21 +1,42 @@
 - name: Vanshika
   role: Co-President
   bio: Advocates for equitable access to healthcare and for educating communities about how the system actually works.
+  es:
+    role: Copresidenta
+    bio: Defiende el acceso equitativo a la atención médica y la educación de las comunidades sobre cómo funciona realmente el sistema.
 - name: Kareena
   role: Co-President
   bio: Focused on expanding healthcare access regardless of circumstance, through education on health topics and wellness practices.
+  es:
+    role: Copresidenta
+    bio: Se dedica a ampliar el acceso a la atención médica sin importar las circunstancias, mediante la educación sobre temas de salud y prácticas de bienestar.
 - name: Snigdha
   role: Vice President
   bio: Works to make sure people know what healthcare options are available to them, so they can make the best decisions for their families.
+  es:
+    role: Vicepresidenta
+    bio: Trabaja para que las personas conozcan las opciones de atención médica a su alcance y puedan tomar las mejores decisiones para sus familias.
 - name: Varada
   role: Vice President
   bio: Started our billing transparency petition. Passionate about science and medicine, and about making treatment accessible to all communities.
+  es:
+    role: Vicepresidenta
+    bio: Inició nuestra petición de transparencia en la facturación. Apasionada por la ciencia y la medicina, y por hacer que el tratamiento sea accesible para todas las comunidades.
 - name: Pranavi
   role: Chief of Staff
   bio: Promotes fair access to healthcare and works to keep medical services within reach for everyone.
+  es:
+    role: Jefa de gabinete
+    bio: Promueve el acceso justo a la atención médica y trabaja para que los servicios médicos estén al alcance de todos.
 - name: Krisha
   role: Chapter Director
   bio: An aspiring psychiatrist. Leads chapter growth and co-authored our Medicare guide.
+  es:
+    role: Directora de capítulos
+    bio: Aspirante a psiquiatra. Dirige el crecimiento de los capítulos y fue coautora de nuestra guía de Medicare.
 - name: Renee
   role: Social Media Director
   bio: Joined because she believes everyone should have access to medical care. Runs our Instagram and outreach.
+  es:
+    role: Directora de redes sociales
+    bio: Se unió porque cree que todas las personas deberían tener acceso a atención médica. Está a cargo de nuestro Instagram y de la divulgación.

@@ -16,6 +16,12 @@ instagram_url: https://www.instagram.com/free_healthcareinitiativeca/
 petition_url: https://www.change.org/p/end-hidden-hospital-charges-support-billing-transparency
 gofundme_url: https://www.gofundme.com/f/help-us-make-healthcare-affordable-in-california
 
+defaults:
+  - scope: { path: "" }
+    values: { lang: en }
+  - scope: { path: "es" }
+    values: { lang: es }
+
 exclude:
   - Gemfile
   - Gemfile.lock

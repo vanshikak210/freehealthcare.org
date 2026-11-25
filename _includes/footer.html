@@ -1,12 +1,14 @@
+{%- assign L = page.lang | default: site.lang -%}
+{%- assign ui = site.data.ui[L] -%}
 <footer class="site-footer">
   <div class="wrapper">
     <p>
-      <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
+      <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">{{ ui.instagram }}</a>
       <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-      <a href="{{ site.petition_url }}" target="_blank" rel="noopener">Petition</a>
+      <a href="{{ site.petition_url }}" target="_blank" rel="noopener">{{ ui.petition }}</a>
     </p>
-    <p>Free Healthcare Initiative of California — a student-led effort to make healthcare understandable and reachable for every family.</p>
-    <p>We are not affiliated with Medicare, the Social Security Administration, Covered California, or any insurance company. Nothing on this site is medical, legal, or insurance advice.</p>
+    <p>{{ ui.footer_blurb }}</p>
+    <p>{{ ui.footer_disclaimer }}</p>
   </div>
 </footer>
 <script src="{{ '/assets/js/prefs.js' | relative_url }}" defer></script>

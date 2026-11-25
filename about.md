@@ -6,6 +6,7 @@ heading: Healthcare is a right, not a privilege.
 lede: Free Healthcare Initiative of California is a youth-led nonprofit working to both educate and bring help to lower-income families. We want to make sure all individuals are getting the help they need, while also figuring out a way to give them the best care.
 description: "Who we are: a youth-led California nonprofit making healthcare understandable and reachable for every family."
 permalink: /about/
+ref: about
 ---
 
 Too many people already qualify for coverage they never receive — not because they were turned away, but because no one ever explained it to them in language they could use. We exist to close that gap.

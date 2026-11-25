@@ -6,6 +6,7 @@ heading: Bring this work to your community
 lede: We're students, and the whole model is students helping their own neighborhoods. There are two ways in.
 description: Join the Free Healthcare Initiative of California's leadership program or start a chapter at your school or in your city.
 permalink: /involved/
+ref: involved
 ---
 
 <section>

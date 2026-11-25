@@ -38,6 +38,7 @@ body { background: var(--paper); color: var(--ink); font-size: 1.1875rem; -webki
     &:hover, &[aria-current] { color: var(--ink); border-bottom-color: var(--accent); }
   }
   .btn { margin: 0; padding: 9px 17px; font-size: .92rem; &, &:hover { color: var(--btn-fg); } }
+  .lang-link { margin-left: 0; font-weight: 600; @media (min-width: 901px) { display: none; } }
   label[for="nav-trigger"] { display: none; }
 }
 

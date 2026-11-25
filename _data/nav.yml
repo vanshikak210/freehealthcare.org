@@ -1,18 +1,10 @@
-# Top navigation, in order. Add `button: true` to style a link as a button.
-- title: Home
-  url: /
-- title: Events
-  url: /events/
-- title: About
-  url: /about/
-- title: Get Help
-  url: /help/
-- title: Petition
-  url: /petition/
-- title: Get Involved
-  url: /involved/
-- title: Contact
-  url: /contact/
-- title: Donate
-  url: /donate/
-  button: true
+# Top navigation, in order. `path` is the English URL; other languages are prefixed (/es/...).
+# Add `button: true` to style a link as a button.
+- { path: /,          en: Home,         es: Inicio }
+- { path: /events/,    en: Events,       es: Eventos }
+- { path: /about/,     en: About,        es: Nosotros }
+- { path: /help/,      en: Get Help,     es: Ayuda }
+- { path: /petition/,  en: Petition,     es: Petición }
+- { path: /involved/,  en: Get Involved, es: Participe }
+- { path: /contact/,   en: Contact,      es: Contacto }
+- { path: /donate/,    en: Donate,       es: Donar, button: true }

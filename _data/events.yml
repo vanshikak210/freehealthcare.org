@@ -1,6 +1,7 @@
 # One entry per event. Each event hides itself automatically once `end` has passed.
 # date: YYYY-MM-DD   time: text shown to visitors   end: ISO time with the Pacific offset
 #   (-08:00 in winter, -07:00 during daylight saving time)
+# `es:` holds the Spanish text (falls back to English for anything left out).
 - title: Diabetes Awareness
   date: 2026-11-28
   time: 2:00 – 3:00 PM
@@ -10,6 +11,12 @@
   button:
     label: Join on Zoom
     url: https://us04web.zoom.us/j/77489033156?pwd=VWsbgy6TJlTAHJ6PbPJXp7PVFAMGqA.1
+  es:
+    title: Concientización sobre la diabetes
+    time: 2:00 – 3:00 p. m.
+    place: Evento en línea por Zoom
+    text: Acompañe a FHI en una reunión interactiva para aprender, desmentir mitos y conocer cómo acceder a la atención de la diabetes.
+    button: Unirse por Zoom
 
 - title: Immunization & Vaccine 101
   date: 2026-12-07
@@ -22,3 +29,10 @@
     label: Get directions
     ghost: true
     url: https://www.google.com/maps/search/?api=1&query=4S+Ranch+Library+10433+Reserve+Dr+San+Diego+CA+92127
+  es:
+    title: Inmunización y vacunas 101
+    time: 4:30 – 5:30 p. m.
+    place: Biblioteca 4S Ranch, 10433 Reserve Dr, San Diego, CA 92127
+    text: Un taller gratuito para todas las edades, de FHI California y ProjectPatho, en colaboración con el Condado de San Diego. Actividades prácticas para niños, adolescentes y adultos, cómo las vacunas entrenan al sistema inmunitario, mitos y hechos explicados con sencillez y una sesión de preguntas y respuestas con expertos.
+    note: Gratuito y abierto a todos. No se necesita inscripción.
+    button: Cómo llegar
