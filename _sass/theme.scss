@@ -161,3 +161,18 @@ form .btn { margin-top: 22px; }
   input, textarea, select { font-size: 16px; }
   form .btn { width: 100%; }
 }
+
+// Fonts chosen in Preferences
+:root[data-font="sans"] { --serif: "Public Sans", system-ui, sans-serif; }
+:root[data-font="serif"] { --serif: Georgia, serif; }
+:root[data-font="mono"] { --serif: ui-monospace, Menlo, Consolas, monospace; }
+:root[data-font="sans"] body { font-family: "Public Sans", system-ui, sans-serif; }
+:root[data-font="serif"] body { font-family: Georgia, "Times New Roman", serif; }
+:root[data-font="mono"] body { font-family: ui-monospace, Menlo, Consolas, monospace; }
+
+// Hide the Google Translate bar and pop-ups (translation still works)
+.goog-te-banner-frame, .goog-te-balloon-frame, .skiptranslate, .goog-te-gadget, #google_translate_element, #goog-gt-tt { display: none !important; }
+body { top: 0 !important; position: static !important; }
+.goog-text-highlight { background: none !important; box-shadow: none !important; }
+.prefs-panel select { width: 100%; padding: 8px; font: inherit; color: inherit; background: transparent; border: 1px solid var(--line, currentColor); border-radius: 3px; }
+.prefs-panel { max-height: calc(100vh - 110px); overflow-y: auto; }

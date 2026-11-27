@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Free Medicare & Medi-Cal Help
+title: Free Healthcare Initiative of California
 heading: Healthcare is a right, not a privilege.
 lede: We're a youth-led California nonprofit helping lower-income families understand and claim the healthcare they already qualify for. Free, in plain language, with nothing to sell you.
 permalink: /

@@ -12,6 +12,13 @@ en:
   reset: Reset to defaults
   language: Language
   machine_translated: More languages (machine translated)
+  font: Font
+  font_default: Default
+  font_sans: Sans-serif
+  font_serif: Serif
+  font_mono: Monospace
+  read_aloud: Read selected text aloud
+  stop_reading: Stop reading
   footer_blurb: Free Healthcare Initiative of California — a student-led effort to make healthcare understandable and reachable for every family.
   footer_disclaimer: We are not affiliated with Medicare, the Social Security Administration, Covered California, or any insurance company. Nothing on this site is medical, legal, or insurance advice.
   instagram: Instagram
@@ -33,6 +40,13 @@ es:
   reset: Restablecer valores
   language: Idioma
   machine_translated: Más idiomas (traducción automática)
+  font: Fuente
+  font_default: Predeterminada
+  font_sans: Sans serif
+  font_serif: Serif
+  font_mono: Monoespaciada
+  read_aloud: Leer en voz alta el texto seleccionado
+  stop_reading: Detener lectura
   footer_blurb: Free Healthcare Initiative of California — un esfuerzo liderado por estudiantes para que la atención médica sea comprensible y accesible para todas las familias.
   footer_disclaimer: No estamos afiliados a Medicare, la Administración del Seguro Social, Covered California ni ninguna compañía de seguros. Nada de lo que aparece en este sitio constituye asesoramiento médico, legal ni de seguros.
   instagram: Instagram

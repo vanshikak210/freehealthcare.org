@@ -1,7 +1,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  {%- if page.url == '/' or page.url == '/es/' -%}
+  {%- seo title=false -%}
+  <title>{{ site.title }}</title>
+  {%- else -%}
   {%- seo -%}
+  {%- endif -%}
   {%- if page.ref %}
   {%- assign alts = site.pages | where: "ref", page.ref %}
   {%- for a in alts %}
@@ -22,6 +27,8 @@
         var t = localStorage.getItem('fhic-theme'), z = localStorage.getItem('fhic-size');
         if (t === 'light' || t === 'dark' || t === 'system') { d.dataset.theme = t; }
         if (z === 'large') { d.dataset.size = z; }
+        var f = localStorage.getItem('fhic-font');
+        if (f === 'sans' || f === 'serif' || f === 'mono') { d.dataset.font = f; }
       } catch (e) {}
     })();
   </script>
