@@ -34,7 +34,7 @@ body { background: var(--paper); color: var(--ink); font: 1.1875rem/1.65 var(--s
   small { display: block; font: 500 .7rem "Public Sans", sans-serif; letter-spacing: .05em; text-transform: uppercase; color: var(--soft); }
 }
 .site-nav { float: none; flex: 1; display: flex; justify-content: flex-end; align-items: center; min-width: 0; line-height: 1.4;
-  .trigger { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 6px 26px; }
+  .trigger { display: flex; flex-wrap: nowrap; justify-content: flex-end; align-items: center; gap: 6px 22px; }
   .page-link:not(.btn) { margin: 0; padding: 4px 0; color: var(--soft); font-size: .93rem; font-weight: 500; text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap;
     &:hover, &[aria-current] { color: var(--ink); border-bottom-color: var(--accent); }
   }
@@ -123,11 +123,8 @@ textarea { min-height: 130px; resize: vertical; }
 .skiptranslate, .goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt { display: none !important; }
 body { top: 0 !important; }
 
-// mobile
-@media (max-width: 900px) {
-  body { font-size: 1.0625rem; }
-  .wrapper { padding: 0 18px; }
-  .page-content { padding: 34px 0 16px; }
+// compact header (menu button) on narrower screens
+@media (max-width: 1100px) {
   .site-header .wrapper { flex-wrap: wrap; gap: 10px; padding-top: 11px; padding-bottom: 11px; }
   .site-title { flex: 1; gap: 10px; font-size: 1rem; img { width: 42px; height: 42px; } }
   .site-nav { display: contents;
@@ -143,12 +140,19 @@ body { top: 0 !important; }
     .nav-trigger:focus-visible + label { outline: 3px solid var(--accent); outline-offset: 2px; }
   }
   .prefs-toggle { order: 1; }
-  .prefs-panel { right: 18px; }
   .bars, .bars::before, .bars::after { display: block; width: 18px; height: 2px; background: var(--ink); }
   .bars { position: relative; }
   .bars::before, .bars::after { content: ""; position: absolute; left: 0; top: -6px; }
   .bars::after { top: 6px; }
   .nav-trigger:checked + label .bars { background: none; &::before, &::after { top: 0; transform: rotate(45deg); } &::after { transform: rotate(-45deg); } }
+}
+
+// mobile
+@media (max-width: 900px) {
+  body { font-size: 1.0625rem; }
+  .wrapper { padding: 0 18px; }
+  .page-content { padding: 34px 0 16px; }
+  .prefs-panel { right: 18px; }
   h1 { max-width: none; }
   h2 { margin: 34px 0 10px; }
   section { gap: 14px; }
